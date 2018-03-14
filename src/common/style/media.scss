@@ -1,0 +1,23 @@
+$max-width-xs: 768px;
+$max-width-sm: 970px; 
+
+#app {
+  @media (max-width: $max-width-xs) {
+    .main-nav {
+      width: 0;
+    }
+    .main-head {
+      margin-left: 0 !important;
+      justify-content: space-between;
+      .nav-menu {
+        display: none;
+      }
+      .mp-head-title {
+        display: block;
+      }
+    }
+    .ta-page {
+      padding-left: 0 !important;
+    }
+  }
+}
