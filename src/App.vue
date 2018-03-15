@@ -5,14 +5,16 @@
       <main-head :isShrink="isShrink"  @change-shrink="changeShrink"></main-head>
     </div>
     <div class="ta-page" :style="{paddingLeft: isShrink?'64px':'200px', paddingTop: '60px'}">
-      <router-view/>
+      <div class="ta-page-content">
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import mainNav from '@/common/view/main-nav'
-import mainHead from '@/common/view/main-head'
+import mainNav from '@/common/main-nav'
+import mainHead from '@/common/main-head'
 export default {
   name: 'App',
   data () {
@@ -36,5 +38,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "common/style/index";
+@import "style/index";
 </style>
