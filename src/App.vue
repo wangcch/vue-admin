@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <main-nav :isShrink="isShrink" ></main-nav>
-    <main-head :isShrink="isShrink" :style="{marginLeft: isShrink?'64px':'200px'}"  @change-shrink="changeShrink"></main-head>
+    <div class="ta-head" :style="{paddingLeft: isShrink?'64px':'200px'}">
+      <main-head :isShrink="isShrink"  @change-shrink="changeShrink"></main-head>
+    </div>
     <div class="ta-page" :style="{paddingLeft: isShrink?'64px':'200px', paddingTop: '60px'}">
       <router-view/>
     </div>
@@ -15,7 +17,7 @@ export default {
   name: 'App',
   data () {
     return {
-      isShrink: false
+      isShrink: true
     }
   },
   methods: {
@@ -23,6 +25,8 @@ export default {
       console.log('app', val)
       this.isShrink = val
     }
+  },
+  created () {
   },
   components: {
     mainNav,

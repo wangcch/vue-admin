@@ -11,10 +11,12 @@
     left: 0;
     top: 0;
   }
-  .main-head {
+  .ta-head {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    box-sizing: border-box;
     transition: all 0.3s;
   }
   .ta-page {
