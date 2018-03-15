@@ -81,7 +81,7 @@ export default {
   height: 100%;
   overflow: hidden;
   background: #545c64;
-  transition: all 0.3s;
+  // transition: all 0.3s;
   .main-nav-ul {
     border: none;
     overflow: hidden;

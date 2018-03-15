@@ -19,12 +19,12 @@ export default {
   name: 'App',
   data () {
     return {
-      isShrink: true
+      isShrink: false
     }
   },
   methods: {
     changeShrink (val) {
-      console.log('app', val)
+      // console.log('app', val)
       this.isShrink = val
     }
   },
@@ -36,7 +36,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
 @import "style/index";
 </style>

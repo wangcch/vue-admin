@@ -35,6 +35,8 @@ export default {
       let innerWidth = window.innerWidth
       if (innerWidth > 970) {
         this.changeShrink(false)
+      } else {
+        this.changeShrink(true)
       }
       window.onresize = () => {
         if (window.innerWidth < 970) {
