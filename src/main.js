@@ -8,6 +8,8 @@ import VeLine from 'v-charts/lib/line'
 import VePie from 'v-charts/lib/pie'
 import VeHistogram from 'v-charts/lib/histogram'
 import VeRing from 'v-charts/lib/ring'
+import store from './store'
+import '@/style/index.scss'
 
 Vue.config.productionTip = false
 Vue.use(Element)
@@ -21,6 +23,7 @@ Vue.component('ve-ring', VeRing)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
