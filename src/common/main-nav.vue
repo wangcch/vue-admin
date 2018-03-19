@@ -5,49 +5,38 @@
         <h1>{{ isShrink? 'D' : 'DEMON' }}</h1>
       </div>
     </div>
-    <el-menu default-active="1" class="main-nav-ul" @open="handleOpen" @close="handleClose" :collapse="isShrink" background-color="#545c64" text-color="#fff" :router="true">
-      <el-menu-item index="1" :route="{path: '/'}">
+    <el-menu default-active="1" class="main-nav-ul" @open="handleOpen" @close="handleClose" @select="handleSelect" :collapse="isShrink" background-color="#32393f" text-color="#fff" :router="true">
+      <el-menu-item index="dashboard">
         <i class="el-icon-news"></i>
         <span slot="title">Dashboard</span>
       </el-menu-item>
-      <el-menu-item index="2" :route="{path: '/tables'}">
+      <el-menu-item index="tables">
         <i class="el-icon-tickets" router></i>
         <span slot="title">Tables</span>
       </el-menu-item>
-      <el-menu-item index="3" :route="{path: '/forms'}">
+      <el-menu-item index="forms">
         <i class="el-icon-edit-outline"></i>
         <span slot="title">Form</span>
       </el-menu-item>
       <el-submenu index="4">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
+          <i class="el-icon-setting"></i>
+          <span slot="title">Setting</span>
         </template>
         <el-menu-item-group>
-          <span slot="title">分组一</span>
-          <el-menu-item index="4-1">选项1</el-menu-item>
-          <el-menu-item index="4-2">选项2</el-menu-item>
+          <span slot="title">DEMO1</span>
+          <el-menu-item index="4-1">DEMO1-1</el-menu-item>
+          <el-menu-item index="4-2">DEMO1-2</el-menu-item>
         </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="4-3">选项3</el-menu-item>
+        <el-menu-item-group>
+          <span slot="title">DEMON2</span>
+          <el-menu-item index="4-3">DEMO2-1</el-menu-item>
         </el-menu-item-group>
         <el-submenu index="4-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="4-4-1">选项1</el-menu-item>
+          <span slot="title">DEMO2-2</span>
+          <el-menu-item index="4-4-1">DEMO2-2-1</el-menu-item>
         </el-submenu>
       </el-submenu>
-      <el-menu-item index="5">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="6" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="7">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -62,10 +51,21 @@ export default {
   },
   methods: {
     handleOpen () {
-
+      console.log('menu open')
     },
     handleClose () {
+      console.log('menu close')
+    },
 
+    handleSelect () {
+      console.log('menu select')
+      if (this._getInnerWidth < 768) {
+        console.log('<768 shrink')
+      }
+    },
+
+    _getInnerWidth () {
+      return window.innerWidth
     }
   },
   created () {
@@ -80,7 +80,8 @@ export default {
   width: 200px;
   height: 100%;
   overflow: hidden;
-  background: #545c64;
+  // background: #545c64;
+  background: #32393f;
   // transition: all 0.3s;
   .main-nav-ul {
     border: none;
@@ -97,7 +98,7 @@ export default {
       line-height: 50px;
       color: #fff;
       font-weight: bold;
-      background: #409EFF;
+      background: #545c64;
       font-size: 22px;
       border-radius: 3px;
       cursor: pointer;

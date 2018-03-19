@@ -17,11 +17,29 @@ export const constantRouter = [
     path: '',
     component: Layout,
     redirect: 'dashboard',
-    children: [{
-      path: 'dashboard',
-      component: Dashboard,
-      name: 'dashboard'
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        component: Dashboard,
+        name: 'dashboard'
+      },
+      {
+        path: '/tables',
+        name: 'Tables',
+        component: Tables,
+        children: [
+          // { path: 'index', component: Tables, name: 'tables', meta: { title: 'tables' } }
+        ]
+      },
+      {
+        path: '/forms',
+        name: 'Forms',
+        component: Forms,
+        children: [
+          // {}
+        ]
+      }
+    ]
   }
 ]
 

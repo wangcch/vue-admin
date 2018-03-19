@@ -65,7 +65,7 @@ export default {
           { min: 6, message: '建议密码长度大于6个字符', trigger: 'blur' }
         ],
         tpwd: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
+          { required: true, message: '请再次输入密码', trigger: 'blur' },
           { validator: validatorSamePwd, trigger: 'blur' }
         ]
       },
