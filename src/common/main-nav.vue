@@ -59,13 +59,10 @@ export default {
 
     handleSelect () {
       console.log('menu select')
-      if (this._getInnerWidth < 768) {
-        console.log('<768 shrink')
+      let innerWidth = window.innerWidth
+      if (innerWidth < 768) {
+        console.log('isShrink')
       }
-    },
-
-    _getInnerWidth () {
-      return window.innerWidth
     }
   },
   created () {
@@ -82,7 +79,10 @@ export default {
   overflow: hidden;
   // background: #545c64;
   background: #32393f;
-  // transition: all 0.3s;
+  // @media (max-width: 768px) {
+    transition: all 0.3s;
+  // }
+    // transition: all 0.3s;
   .main-nav-ul {
     border: none;
     overflow: hidden;
