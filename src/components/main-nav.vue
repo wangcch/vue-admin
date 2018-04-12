@@ -5,7 +5,7 @@
         <h1>{{ isShrink? 'D' : 'DEMON' }}</h1>
       </div>
     </div>
-    <el-menu default-active="1" class="main-nav-ul" @open="handleOpen" @close="handleClose" @select="handleSelect" :collapse="isShrink" background-color="#32393f" text-color="#fff" :router="true">
+    <el-menu default-active="getRouterActive" class="main-nav-ul" @open="handleOpen" @close="handleClose" @select="handleSelect" :collapse="getIsShrink" background-color="#32393f" text-color="#fff" :router="true">
       <el-menu-item index="dashboard">
         <i class="el-icon-news"></i>
         <span slot="title">Dashboard</span>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'main-nav',
   props: ['isShrink'],
@@ -49,7 +50,19 @@ export default {
     return {
     }
   },
+  computed: {
+    ...mapGetters([
+      'getIsShrink',
+      'getIsMobi',
+      'getRouterActive'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'setShrinkOn',
+      'setRouterActive'
+    ]),
+
     handleOpen () {
       console.log('menu open')
     },
@@ -57,11 +70,10 @@ export default {
       console.log('menu close')
     },
 
-    handleSelect () {
-      console.log('menu select')
-      let innerWidth = window.innerWidth
-      if (innerWidth < 768) {
-        console.log('isShrink')
+    handleSelect (index) {
+      this.setRouterActive(index)
+      if (this.getIsMobi) {
+        this.setShrinkOn()
       }
     }
   },

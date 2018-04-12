@@ -31,7 +31,6 @@ export default {
 .layout-login {
   width: 100%;
   height: 100%;
-  // background: linear-gradient(to top right, rgba(#303133, 1), rgba(#606266, 0.6));
   background: url('../assets/loginbg.jpg') no-repeat;
   background-size: cover;
   position: relative;

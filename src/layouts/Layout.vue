@@ -1,12 +1,15 @@
 <template>
   <div id="layout">
-    <main-nav :isShrink="isShrink" ></main-nav>
-    <div class="ta-head" :style="{paddingLeft: isShrink?'64px':'200px'}">
-      <main-head :isShrink="isShrink"  @change-shrink="changeShrink"></main-head>
+    <main-nav :isShrink="getIsShrink" ></main-nav>
+    <div class="ta-head" :style="{paddingLeft: getIsShrink?'64px':'200px'}">
+      <main-head :getIsShrink="getIsShrink"></main-head>
     </div>
-    <div class="ta-page" :style="{paddingLeft: isShrink?'64px':'200px', paddingTop: '60px'}">
+    <div class="ta-page" :style="{paddingLeft: getIsShrink?'64px':'200px', paddingTop: '60px'}">
       <div class="ta-page-content">
         <router-view/>
+      </div>
+      <div class="ta-page-footer">
+        <p>Copyright © 2018 Wangcch.</p>
       </div>
     </div>
   </div>
@@ -15,6 +18,7 @@
 <script>
 import mainNav from '@/components/main-nav'
 import mainHead from '@/components/main-head'
+import { mapGetters } from 'vuex'
 export default {
   name: 'layout',
   data () {
@@ -22,11 +26,13 @@ export default {
       isShrink: true
     }
   },
+  computed: {
+    ...mapGetters([
+      'getIsShrink',
+      'getIsMobi'
+    ])
+  },
   methods: {
-    changeShrink (val) {
-      // console.log('app', val)
-      this.isShrink = val
-    }
   },
   created () {
   },

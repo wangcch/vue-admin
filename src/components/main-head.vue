@@ -13,47 +13,30 @@
 
 <script>
 import navMenu from '@/components/nav-menu'
+import { mapActions } from 'vuex'
 export default {
   name: 'main-head',
-  props: ['isShrink'],
   data () {
     return {
-      isShrinkHead: this.isShrink
     }
   },
   methods: {
+    ...mapActions([
+      'toggleShrink',
+      'setRouterActive'
+    ]),
     navToggleClick () {
       this.changeShrink(!this.isShrinkHead)
     },
 
     changeShrink (val) {
-      this.isShrinkHead = val
-      this.$emit('change-shrink', this.isShrinkHead)
+      this.toggleShrink()
     },
 
     haveChangeWindow () {
-      let innerWidth = window.innerWidth
-      if (innerWidth > 970) {
-        this.changeShrink(false)
-      } else {
-        this.changeShrink(true)
-      }
-      window.onresize = () => {
-        if (window.innerWidth < 970) {
-          this.changeShrink(true)
-        } else {
-          this.changeShrink(false)
-        }
-      }
-    }
-  },
-  watch: {
-    isShrinkHead (val) {
-      this.$emit('change-shrink', val)
     }
   },
   created () {
-    this.haveChangeWindow()
   },
   components: {
     navMenu

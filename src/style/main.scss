@@ -30,6 +30,8 @@ body {
     height: 100%;
     box-sizing: border-box;
     z-index: 100;
+    display: flex;
+    flex-direction: column;
     .ta-page-title {
       padding: 30px 15px;
       background: #ffffff;
@@ -37,6 +39,16 @@ body {
     .ta-page-content {
       padding: 10px;
       box-sizing: border-box;
+      flex: auto;
+    }
+    .ta-page-footer {
+      flex: 0 0 auto;
+      padding: 16px;
+      text-align: center;
+      p {
+        font-size: 14px;
+        color: #909399;
+      }
     }
   }
 }
