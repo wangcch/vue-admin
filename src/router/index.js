@@ -1,18 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Layout from '@/layouts/Layout'
+import LayoutLogin from '@/layouts/LayoutLogin'
+
 import Dashboard from '@/pages/Dashboard'
 import Tables from '@/pages/Tables'
 import Forms from '@/pages/Forms'
 import Login from '@/pages/Login'
-
-import Layout from '@/layouts/Layout'
+import Register from '@/pages/Register'
 
 Vue.use(Router)
 
 export const constantRouter = [
   {
     path: '/',
-    component: Login
+    component: LayoutLogin,
+    redirect: 'login',
+    children: [
+      {
+        path: '/login',
+        component: Login,
+        name: 'login'
+      },
+      {
+        path: '/register',
+        component: Register,
+        name: 'register'
+      }
+    ]
   },
   {
     path: '/dashboard',

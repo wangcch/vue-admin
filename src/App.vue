@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-    <!-- <main-nav :isShrink="isShrink" ></main-nav>
-    <div class="ta-head" :style="{paddingLeft: isShrink?'64px':'200px'}">
-      <main-head :isShrink="isShrink"  @change-shrink="changeShrink"></main-head>
-    </div>
-    <div class="ta-page" :style="{paddingLeft: isShrink?'64px':'200px', paddingTop: '60px'}">
-      <div class="ta-page-content"> -->
-        <router-view/>
-      <!-- </div> -->
-    <!-- </div> -->
+    <router-view/>
   </div>
 </template>
 
