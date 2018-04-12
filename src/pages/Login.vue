@@ -51,7 +51,7 @@ export default {
       }
     }
     return {
-      webTitle: 'DEMON',
+      webTitle: 'Vue-admin',
       webIntroduce: 'Admin DEMO based on Vue , Element and ECharts (with v-charts)',
       loginForm: {},
       isLogin: true,

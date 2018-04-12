@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import navMenu from '@/common/nav-menu'
+import navMenu from '@/components/nav-menu'
 export default {
   name: 'main-head',
   props: ['isShrink'],

@@ -1,25 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from '@/components/Dashboard'
-import Tables from '@/components/Tables'
-import Forms from '@/components/Forms'
-import Login from '@/common/Login'
-import Layout from '@/common/Layout'
+import Dashboard from '@/pages/Dashboard'
+import Tables from '@/pages/Tables'
+import Forms from '@/pages/Forms'
+import Login from '@/pages/Login'
+
+import Layout from '@/layouts/Layout'
 
 Vue.use(Router)
 
 export const constantRouter = [
   {
-    path: '/login',
+    path: '/',
     component: Login
   },
   {
-    path: '',
+    path: '/dashboard',
     component: Layout,
     redirect: 'dashboard',
     children: [
       {
-        path: 'dashboard',
+        path: '',
         component: Dashboard,
         name: 'dashboard'
       },

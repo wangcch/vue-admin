@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import mainNav from '@/common/main-nav'
-import mainHead from '@/common/main-head'
+import mainNav from '@/components/main-nav'
+import mainHead from '@/components/main-head'
 export default {
   name: 'layout',
   data () {
