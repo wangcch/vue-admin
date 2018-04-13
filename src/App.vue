@@ -55,7 +55,7 @@ export default {
     },
     monitDashboardCardWidth () {
       try {
-        let cardContent = document.getElementsByClassName('ta-card-content')[0]
+        let cardContent = document.getElementsByClassName('ty-card-content')[0]
         if (cardContent) {
           this.changeDashboardSize(cardContent.offsetWidth)
         }

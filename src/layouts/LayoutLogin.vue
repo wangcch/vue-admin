@@ -78,7 +78,7 @@ export default {
           margin-bottom: 30px;
         }
       }
-      .ta-btn-100 {
+      .ty-btn-100 {
         width: 100%;
       }
     }

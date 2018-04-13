@@ -1,14 +1,14 @@
 <template>
   <div id="layout">
     <main-nav :isShrink="getIsShrink" ></main-nav>
-    <div class="ta-head" :style="{paddingLeft: getIsShrink?'64px':'200px'}">
+    <div class="ty-head" :style="{paddingLeft: getIsShrink?'64px':'200px'}">
       <main-head :getIsShrink="getIsShrink"></main-head>
     </div>
-    <div class="ta-page" :style="{paddingLeft: getIsShrink?'64px':'200px', paddingTop: '60px'}">
-      <div class="ta-page-content">
+    <div class="ty-page" :style="{paddingLeft: getIsShrink?'64px':'200px', paddingTop: '60px'}">
+      <div class="ty-page-content">
         <router-view/>
       </div>
-      <div class="ta-page-footer">
+      <div class="ty-page-footer">
         <p>Copyright © 2018 Wangcch.</p>
       </div>
     </div>
@@ -43,4 +43,7 @@ export default {
 }
 </script>
 <style lang="scss">
+#layout {
+  height: 100%;
+}
 </style>

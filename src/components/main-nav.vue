@@ -37,6 +37,14 @@
           <el-menu-item index="4-4-1">DEMO2-2-1</el-menu-item>
         </el-submenu>
       </el-submenu>
+      <el-submenu index="error">
+        <template slot="title">
+          <i class="el-icon-warning"></i>
+          <span slot="title">Error</span>
+        </template>
+        <el-menu-item index="404">404</el-menu-item>
+        <el-menu-item index="500">500</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>

@@ -16,7 +16,7 @@ body {
     top: 0;
     z-index: 200;
   }
-  .ta-head {
+  .ty-head {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,23 +25,23 @@ body {
     transition: all 0.3s;
     z-index: 300;
   }
-  .ta-page {
+  .ty-page {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    .ta-page-title {
+    .ty-page-title {
       padding: 30px 15px;
       background: #ffffff;
     }
-    .ta-page-content {
+    .ty-page-content {
       padding: 10px;
       box-sizing: border-box;
       flex: auto;
     }
-    .ta-page-footer {
+    .ty-page-footer {
       flex: 0 0 auto;
       padding: 16px;
       text-align: center;
@@ -51,4 +51,11 @@ body {
       }
     }
   }
+}
+
+.ty-flex-center_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -9,7 +9,7 @@
         <el-input type="password" v-model="loginForm.password" auto-complete="on" placeholder="666666" name="password"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm" :loading="isLoading" class="ta-btn-100">sign in</el-button>
+        <el-button type="primary" @click="submitForm" :loading="isLoading" class="ty-btn-100">sign in</el-button>
       </el-form-item>
     </el-form>
     <el-button type="text" @click="toRegiter" >sign up</el-button>

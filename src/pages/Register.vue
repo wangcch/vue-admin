@@ -12,8 +12,8 @@
         <el-input type="password" v-model="registerForm.confirm" auto-complete="off" placeholder="comfirm"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm()" :loading="isLoading" class="ta-btn-100">sign up</el-button>
-        <el-button @click="ressetForm()" class="ta-btn-100" style="margin: 10px 0 0 0;">reset</el-button>
+        <el-button type="primary" @click="submitForm()" :loading="isLoading" class="ty-btn-100">sign up</el-button>
+        <el-button @click="ressetForm()" class="ty-btn-100" style="margin: 10px 0 0 0;">reset</el-button>
       </el-form-item>
     </el-form>
     <el-button type="text" @click="toLogin" >sign in</el-button>

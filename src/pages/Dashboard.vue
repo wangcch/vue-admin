@@ -4,7 +4,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>玫瑰环图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
             <ve-ring :data="chartData" :settings="chartSettings"></ve-ring>
           </div>
         </el-card>
@@ -12,7 +12,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>玫瑰饼图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
              <ve-pie :data="chartData" :settings="chartSettings"></ve-pie>
           </div>
         </el-card>
@@ -20,7 +20,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>饼图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
             <ve-pie :data="chartData" :settings="chartSettings2"></ve-pie>
           </div>
         </el-card>
@@ -28,7 +28,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>折线图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
             <ve-line :data="chartData" :settings="chartSettings3"></ve-line>
           </div>
         </el-card>
@@ -36,7 +36,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>堆积面积图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
             <ve-line :data="chartData" :settings="chartSettings4"></ve-line>
           </div>
         </el-card>
@@ -44,7 +44,7 @@
       <el-col :lg="8" :sm="12" :xs="24">
         <el-card>
           <div slot="header"><span>柱状图</span></div>
-          <div class="ta-card-content">
+          <div class="ty-card-content">
             <ve-histogram :data="chartData" :settings="chartSettings5"></ve-histogram>
           </div>
         </el-card>

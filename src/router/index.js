@@ -9,6 +9,8 @@ import Tables from '@/pages/Tables'
 import Forms from '@/pages/Forms'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import err404 from '@/pages/error/404'
+import err500 from '@/pages/error/500'
 
 Vue.use(Router)
 
@@ -55,6 +57,23 @@ export const constantRouter = [
         children: [
           // {}
         ]
+      }
+    ]
+  },
+  {
+    path: '*',
+    component: Layout,
+    redirect: '404',
+    children: [
+      {
+        path: '404',
+        component: err404,
+        name: '404'
+      },
+      {
+        path: '500',
+        component: err500,
+        name: '500'
       }
     ]
   }

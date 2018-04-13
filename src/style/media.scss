@@ -6,7 +6,7 @@ $max-width-sm: 970px;
     .main-nav {
       width: 0;
     }
-    .ta-head {
+    .ty-head {
       padding-left: 0 !important;
       .nav-menu {
         display: none;
@@ -15,8 +15,35 @@ $max-width-sm: 970px;
         display: block;
       }
     }
-    .ta-page {
+    .ty-page {
       padding-left: 0 !important;
     }
+  }
+}
+
+.el-dialog {
+  @media (max-width: $max-width-xs) {
+    width: 90%;
+    .el-button {
+      width: 100%;
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+.el-message-box {
+  @media (max-width: $max-width-xs) {
+    width: 90%;
+    .el-button {
+      width: 100%;
+      margin: 10px 0 0 0 !important;
+    }
+  }
+}
+
+.el-message{
+  @media (max-width: $max-width-xs) {
+    min-width: auto;
+    width: 90%;
   }
 }
