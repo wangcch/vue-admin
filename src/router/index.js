@@ -12,6 +12,8 @@ import Register from '@/pages/Register'
 import err404 from '@/pages/error/404'
 import err500 from '@/pages/error/500'
 
+import store from '@/store/index.js'
+
 Vue.use(Router)
 
 export const constantRouter = [
@@ -44,7 +46,7 @@ export const constantRouter = [
       },
       {
         path: '/tables',
-        name: 'Tables',
+        name: 'tables',
         component: Tables,
         children: [
           // { path: 'index', component: Tables, name: 'tables', meta: { title: 'tables' } }
@@ -52,7 +54,7 @@ export const constantRouter = [
       },
       {
         path: '/forms',
-        name: 'Forms',
+        name: 'forms',
         component: Forms,
         children: [
           // {}
@@ -82,7 +84,7 @@ export const constantRouter = [
 export const asyncRouter = [
   {
     path: '/tables',
-    name: 'Tables',
+    name: 'tables',
     component: Layout,
     children: [
       { path: 'index', component: Tables, name: 'tables', meta: { title: 'tables' } }
@@ -90,7 +92,7 @@ export const asyncRouter = [
   },
   {
     path: '/forms',
-    name: 'Forms',
+    name: 'forms',
     component: Layout,
     children: [
       { path: 'index', component: Forms, name: 'forms', meta: { title: 'forms' } }
@@ -98,6 +100,14 @@ export const asyncRouter = [
   }
 ]
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: constantRouter
 })
+
+router.beforeEach((to, from, next) => {
+  store.dispatch('setRouterActive', to.name)
+  next()
+})
+
+export default router

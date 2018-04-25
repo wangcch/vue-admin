@@ -35,7 +35,6 @@ export default {
       'setShrinkOn',
       'setShrinkOff',
       'toggleShrink',
-      'setRouterActive',
       'setLogin',
       'changeDashboardSize'
     ]),
@@ -68,7 +67,6 @@ export default {
       self.haveChangeWindow()
       self.monitDashboardCardWidth()
     }
-    this.setRouterActive(this.$route.name)
   },
 
   created () {

@@ -6,7 +6,12 @@
       <h1>DEMON</h1>
     </div>
     <div class="main-head-user">
-      <el-button size="small" plain>U</el-button>
+      <el-dropdown trigger="click">
+          <el-button type="mini" icon="el-icon-more" plain circle ></el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item @click.native="logout">login out</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -22,8 +27,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'toggleShrink',
-      'setRouterActive'
+      'toggleShrink'
     ]),
     navToggleClick () {
       this.changeShrink(!this.isShrinkHead)
@@ -34,6 +38,11 @@ export default {
     },
 
     haveChangeWindow () {
+    },
+
+    logout () {
+      this.$router.replace('/login')
+      this.$message.success('退出成功')
     }
   },
   created () {

@@ -5,7 +5,7 @@
         <h1>{{ isShrink? 'D' : 'DEMON' }}</h1>
       </div>
     </div>
-    <el-menu default-active="getRouterActive" class="main-nav-ul" @open="handleOpen" @close="handleClose" @select="handleSelect" :collapse="getIsShrink" background-color="#32393f" text-color="#fff" :router="true">
+    <el-menu :default-active="getRouterActive" class="main-nav-ul" @open="handleOpen" @close="handleClose" @select="handleSelect" :collapse="getIsShrink" background-color="#32393f" text-color="#fff" :router="true">
       <el-menu-item index="dashboard">
         <i class="el-icon-news"></i>
         <span slot="title">Dashboard</span>
@@ -67,8 +67,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'setShrinkOn',
-      'setRouterActive'
+      'setShrinkOn'
     ]),
 
     handleOpen () {
@@ -79,7 +78,6 @@ export default {
     },
 
     handleSelect (index) {
-      this.setRouterActive(index)
       if (this.getIsMobi) {
         this.setShrinkOn()
       }
